@@ -6,6 +6,13 @@
 <p> <%= @restaurant.address %> </p>
 <p> <%= @restaurant.phone_number %> </p>
 
+<p>
+<% @restaurant.reviews.each do |review| %>
+  <ul>
+   <li> Stars: <%=  review.rating  %> |  <%=  review.content  %>  </li>
+  </ul>
+<% end %>
+</p>
 
 <%= link_to "Create a Review", new_restaurant_review_path(@restaurant) %>
 <br>
